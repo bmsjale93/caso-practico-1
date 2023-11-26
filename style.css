@@ -1,0 +1,446 @@
+/* Estilo Base */
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: yellow;
+    background-color: black;
+}
+
+/* Estilo para la Intro */
+.intro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Transformación 2D*/
+    max-width: 16em;
+    font-size: 200%;
+    font-weight: 400;
+    color: #4ee;
+    opacity: 0;
+    z-index: 2;
+    animation: intro 4s ease-out; /* Animación para Salida*/
+}
+/* Animación de la Intro */
+@keyframes intro {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Título Principal */
+h1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'Teko', sans-serif;
+    font-size: 20em;
+    line-height: 0.8em;
+    letter-spacing: 0em;
+    color: black;
+    /* Borde para el Título */
+    text-shadow: -7px -7px 0 yellow, 7px -7px 0 yellow, 7px 7px 0 yellow;
+    opacity: 0;
+    z-index: 2;
+    animation: title 10s ease-out 5s;
+}
+
+/* Animación para el Título */
+@keyframes title {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0.1);
+    }
+}
+
+/* Estilos para el contenedor del contenido */
+.content-wrapper {
+    position: absolute;
+    width: 20em;
+    height: 50em;
+    bottom: 0;
+    left: 50%;
+    margin-left: -10em;
+    font-size: 350%;
+    text-align: justify;
+    overflow: hidden;
+    transform-origin: 50% 100%;
+    transform: perspective(300px) rotateX(25deg); /* Efecto Star Wars*/
+    z-index: 2;
+}
+
+/* Estilos para el contenido HTML */
+.content {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    animation: scroll 600s linear 9s;
+}
+
+/* Desplazamiento del contenido */
+@keyframes scroll {
+    0% { top: 100%; }
+    100% { top: -1000%; }
+}
+
+/* Título del Episodio */
+.episode-title {
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Saltos de Línea */
+br {
+    position: relative;
+}
+
+/* Botón de Inicio*/
+#start-button {
+    font-family: 'Teko', sans-serif;
+    text-align: center;
+    font-size: 3em;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 100px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background-color 0.25s, opacity 0.25s, color 0.25s, border-color 0.25s;
+    z-index: 3;
+}
+
+#start-button:hover,
+#start-button:focus {
+    animation: pulse 400ms;
+    background-color: transparent;
+    color: yellow;
+    border-color: yellow;
+}
+
+/* Botón de Saltar Intro */
+.skip-intro {
+    position: fixed;
+    right: 10%;
+    bottom: 10%;
+    padding: 10px 50px;
+    background-color: white;
+    opacity: 0.8;
+    color: black;
+    text-decoration: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.25s, opacity 0.25s, color 0.25s, border-color 0.25s;
+    z-index: 4;
+}
+
+.skip-intro:hover, 
+.skip-intro:focus {
+  animation: pulse 400ms;
+  background-color: transparent;
+  color: #ffff00;
+  border-color: #ffff00;
+}
+
+/* Animación para los Botones */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 255, 0, 0); }
+    25% { box-shadow: 0 0 0 0.1em rgba(255, 255, 0, 0.2); }
+    50% { box-shadow: 0 0 0 0.2em rgba(0, 0, 0, 0.3); }
+    75% { box-shadow: 0 0 0 0.5em rgba(255, 255, 0, 0.1); }
+    100% { box-shadow: 0 0 0 4em rgba(255, 255, 0, 0); }
+}
+
+footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: yellow;
+    text-align: left;
+    padding: 10px 0px 10px 0px;
+    margin: 0;
+    z-index: 5;
+}
+
+footer p {
+    margin: 0;
+    color: black;
+    font-family: 'Teko', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0px 20px;
+}
+
+audio {
+    display: none;
+}
+
+/* Menú Hamburguesa */
+#hamburger-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1080px) {
+    #hamburger-menu {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+    }
+
+    #navbar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: left 0.3s;
+    }
+
+    #navbar ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #navbar ul li {
+        margin: 10px 0;
+    }
+
+    #navbar ul a {
+        font-size: 1em;
+        color: white;
+        padding: 20px 20px;
+        border: 2px solid white;
+        border-radius: 5px;
+    }
+
+    #navbar ul a:hover {
+        background-color: blue;
+    }
+
+    header nav ul a:hover {
+    color: yellow;
+    transform: scale(1.3);
+    }
+}
+
+/* Estilo para el botón de cierre */
+#close-menu {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    font-size: 2em;
+    font-family: 'Teko', sans-serif;
+    font-weight: 600;
+    padding: 5px 40px;
+    color: yellow;
+    background-color: transparent;
+    border: 2px solid yellow;
+    cursor: pointer;
+}
+
+#close-menu:hover {
+    color: black;
+    background-color: yellow;
+    border: 2px solid yellow;
+    transition: 500ms;
+}
+
+/* Mostrar el botón de cierre cuando el menú está activo */
+.is-active #close-menu {
+    display: block;
+}
+
+.is-active #navbar {
+    background-image: url('assets/images/photo-1622793139910-e261be0b30a4.webp');
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+.logo img {
+    width: 120px;
+    height: 50px;
+}
+
+header {
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    height: 75px;
+    border-bottom: 2px solid yellow;
+    justify-content: space-between;
+    padding: 10px 40px;
+    font-size: 16px;
+    background-color: linear-gradient(180deg, black 0%, rgba(0, 0, 0, 0.5) 100%);
+    margin: auto;
+    transition: top 0.3s;
+    overflow: hidden;
+}
+
+header nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+header nav ul {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+header nav ul a {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s, transform 0.3s, text-decoration 0.3s; /* Agrega transiciones suaves */
+}
+
+header nav ul a:hover {
+    color: yellow;
+    transform: scale(1.3);
+}
+
+/* Ajuste para la Sección de Video */
+.video-home {
+    width: 100%;
+    height: 700px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.video-home video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    align-items: center;
+}
+
+/* Estilo para la Galería */
+section.gallery {
+    display: grid;
+    /* Galeria Responsive */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 45px;
+    margin-top: 20px;
+    padding-bottom: 40px;
+}
+
+
+/* Ajustes para el contenido principal */
+main {
+  margin-top: 0px;
+  padding: 0 40px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 45px;
+  margin-top: 20px;
+  padding-bottom: 40px;
+}
+
+/* Ajustes para las tarjetas de la galería */
+.card {
+  border-radius: 20px;
+  box-shadow: 0px 9.16327px 9.16327px 9.16327px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  outline: 5px solid yellow;
+  scale: 1.05;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Ajustes para la responsividad */
+@media screen and (max-width: 1600px) {
+  header nav {
+    gap: 30px; /* Reducir el espacio entre elementos del nav */
+  }
+
+  header nav ul {
+    gap: 30px; /* Reducir el espacio entre elementos de la lista */
+  }
+}
+
+/* Estilos para la Galería en Ordenador */
+@media screen and (min-width: 1024px) {
+  section.gallery {
+    grid-template-columns: repeat(4, 1fr); /* 4 tarjetas en una fila */
+  }
+}
+
+/* Estilos para la galería en pantallas más pequeñas */
+@media screen and (max-width: 1023px) {
+  section.gallery {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste automático */
+  }
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #000000 0%, yellow 100%);
+  border-radius: 2px;
+}

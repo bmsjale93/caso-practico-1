@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>WookiePedia - Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <!-- Menú Hamburguesa -->
+        <button id="hamburger-menu" onclick="toggleMenu()">☰</button>
+        <div class="logo">
+        <a href="index.html">
+            <img src="assets/images/logo-wookiepedia.svg" alt="Logo WookiePedia">
+        </a>
+        </div>
+        <nav id="navbar">
+            <!-- Botón de Cierre -->
+            <button id="close-menu" onclick="toggleMenu()">X</button>
+            <ul>
+                <li><a href="#"><img src="assets/icons/home.svg" alt="Icon Home">HOME</a></li>
+                <li><a href="#"><img src="assets/icons/icon-lupa.svg" alt="Icon Curiosidades">CURIOSIDADES</a></li>
+                <li><a href="#"><img src="assets/icons/icon-personajes.svg" alt="Icon Personajes">PERSONAJES</a></li>
+                <li><a href="#"><img src="assets/icons/icon-planetas.svg" alt="Icon Planetas">PLANETAS</a></li>
+                <li><a href="#"><img src="assets/icons/icon-especies.svg" alt="Icon Especies">ESPECIES</a></li>
+                <li><a href="#"><img src="assets/icons/icon-alianzas.svg" alt="Icon Alianzas">ALIANZAS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Sección para el Video -->
+    <section class="video-home">
+        <video loop autoplay playsinline muted src="assets/video/intro-star-wars-video.mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+    </section>
+    <main>
+        <div>
+            <h3>Personajes Star Wars</h3>
+        </div>
+        <section class="gallery">
+           <div class="card">
+            <img src="assets/images/covers/personaje-1.png" alt="Cover 1">
+           </div>
+           <div class="card">
+            <img src="assets/images/covers/personaje-2.png" alt="Cover 2">
+           </div>
+           <div class="card">
+            <img src="assets/images/covers/personaje-3.png" alt="Cover 3">
+           </div>
+           <div class="card">
+            <img src="assets/images/covers/personaje-4.png" alt="Cover 4">
+           </div>
+        </section>
+        <div>
+            <h3>Planetas</h3>
+        </div>
+        <section class="gallery">
+           <div class="card">
+            <img src="assets/images/covers/planeta-1.png" alt="Cover 1">
+           </div>
+           <div class="card">
+            <img src="assets/images/covers/planeta-2.png" alt="Cover 2">
+           </div>
+           <div class="card">
+            <img src="assets/images/covers/planeta-3.png" alt="Cover 3">
+           </div>
+           <div class="card">
+            <img src="assets/images/covers/planeta-4.png" alt="Cover 4">
+           </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+<footer>
+    <p>Creado por Alejandro Delgado</p>
+</footer>
+</html>
